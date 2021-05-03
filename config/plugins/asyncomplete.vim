@@ -49,14 +49,15 @@ imap <C-Space> <Plug>(asyncomplete_force_refresh)
 inoremap <expr><silent> <Tab>   pumvisible() ? "\<Down>" : (<SID>is_whitespace() ? "\<Tab>" : asyncomplete#force_refresh())
 inoremap <expr><silent> <S-Tab> pumvisible() ? "\<Up>"   : (<SID>is_whitespace() ? "\<C-h>" : asyncomplete#force_refresh())
 
-inoremap <expr> <C-j>   pumvisible() ? "\<Down>" : "\<C-j>"
-inoremap <expr> <C-k>   pumvisible() ? "\<Up>"   : "\<C-k>"
+inoremap <expr> <C-n>   pumvisible() ? "\<Down>" : "\<C-n>"
+inoremap <expr> <C-p>   pumvisible() ? "\<Up>"   : "\<C-p>"
 inoremap <expr> <C-d>   pumvisible() ? "\<PageDown>" : "\<C-d>"
 inoremap <expr> <C-u>   pumvisible() ? "\<PageUp>"   : "\<C-u>"
 
 " Menu control
 inoremap <expr> <C-y> pumvisible() ? asyncomplete#close_popup() : "\<C-y>"
-inoremap <expr> <C-e> pumvisible() ? asyncomplete#cancel_popup() : "\<C-e>"
+" 与插入模式下 Emacs 按键映射 冲突，故暂时关闭
+" inoremap <expr> <C-e> pumvisible() ? asyncomplete#cancel_popup() : "\<C-e>"
 
 function! s:is_whitespace()
 	let col = col('.') - 1
