@@ -1,6 +1,7 @@
 # 通用扩展
 - repo: tpope/vim-surround
 - repo: tpope/vim-repeat
+- repo: tpope/vim-commentary
 
 # 快选择代码块
 - repo: gcmt/wildfire.vim
