@@ -1,5 +1,12 @@
 " 自定义配置信息
 
+" 关闭拼写检查
+augroup DisableSpell
+  autocmd!
+  autocmd FileType mail,tex,markdown,vimwiki,org,tpp setlocal nospell
+  autocmd BufRead,BufNewFile *.md setlocal nospell
+augroup END
+
 " 仅展开当前块并屏幕上下居中显示
 nnoremap <S-Return> zMzvzz
 
