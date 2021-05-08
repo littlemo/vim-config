@@ -410,7 +410,7 @@
     let g:vimwiki_hl_headers = 1
     let g:vimwiki_hl_cb_checked = 1
     let g:vimwiki_autowriteall = 0
-  hook_source: source $VIM_PATH/config/plugins/vimwiki.vim
+  hook_source: source $VIM_PATH/config/plugins/wiki.vim
 
 - repo: norcalli/nvim-colorizer.lua
   if: has('nvim-0.4')
