@@ -86,6 +86,7 @@
       \ 'makefile=make',
       \ 'py=python'
       \ ]
+  hook_source: source $VIM_PATH/config/plugins/markdown.vim
 
 # Javascript related
 - repo: pangloss/vim-javascript
