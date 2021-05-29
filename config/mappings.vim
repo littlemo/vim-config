@@ -51,8 +51,8 @@ nnoremap ]w :<C-u>WhitespaceNext<CR>
 nnoremap [w :<C-u>WhitespacePrev<CR>
 
 " Navigation in command line
-cnoremap <C-h> <Home>
-cnoremap <C-l> <End>
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
 cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
 
