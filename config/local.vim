@@ -23,7 +23,4 @@ inoremap <C-j> <C-o>o
 com! FormatJSON %!python3 -c "import json, sys, collections; print(json.dumps(json.load(sys.stdin, object_pairs_hook=collections.OrderedDict), ensure_ascii=False, indent=4))"
 
 " 响应速度优化
-set nocursorline
 set lazyredraw
-set synmaxcol=128
-syntax sync minlines=256
