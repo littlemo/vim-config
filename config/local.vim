@@ -31,3 +31,6 @@ com! FormatJSON %!python3 -c "import json, sys, collections; print(json.dumps(js
 
 " 响应速度优化
 set lazyredraw
+
+
+" vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :
