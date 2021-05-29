@@ -9,7 +9,7 @@ augroup DisableSpell
 augroup END
 
 " 仅展开当前块并屏幕上下居中显示
-nnoremap <S-Return> zMzvzz
+" nnoremap <S-Return> zMzvzz
 
 " 基础光标操作 {{{
 " 插入模式下 Emacs 光标移动映射
