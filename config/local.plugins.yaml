@@ -5,7 +5,7 @@
 - repo: jeffkreeftmeijer/vim-numbertoggle
 
 # 快选择代码块
-# - repo: gcmt/wildfire.vim
+- repo: gcmt/wildfire.vim
 
 # 多光标
-# - repo: mg979/vim-visual-multi
+- repo: mg979/vim-visual-multi
