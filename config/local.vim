@@ -4,7 +4,7 @@ set number relativenumber  " 开启行号&相对行号
 " 关闭拼写检查
 augroup DisableSpell
   autocmd!
-  autocmd FileType mail,tex,markdown,vimwiki,org,tpp setlocal nospell
+  autocmd FileType mail,tex,markdown,vimwiki,org,tpp,gitcommit setlocal nospell
   autocmd BufRead,BufNewFile *.md setlocal nospell
 augroup END
 
