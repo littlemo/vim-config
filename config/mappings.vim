@@ -150,8 +150,8 @@ nnoremap <Leader>cw :<C-u>silent! keeppatterns %substitute/\s\+$//e<CR>
 " ----------------
 
 " Use backspace key for matching parens
-nmap <BS> %
-xmap <BS> %
+" nmap <BS> %
+" xmap <BS> %
 
 " Repeat latest f, t, F or T
 nnoremap \ ;
