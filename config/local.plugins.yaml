@@ -2,6 +2,7 @@
 - repo: tpope/vim-surround
 - repo: tpope/vim-repeat
 - repo: tpope/vim-commentary
+- repo: jeffkreeftmeijer/vim-numbertoggle
 
 # 快选择代码块
 - repo: gcmt/wildfire.vim

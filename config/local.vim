@@ -1,4 +1,5 @@
 " 自定义配置信息
+set number relativenumber  " 开启行号&相对行号
 
 " 关闭拼写检查
 augroup DisableSpell
