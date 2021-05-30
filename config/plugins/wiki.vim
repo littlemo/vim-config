@@ -12,5 +12,7 @@ let g:vimwiki_list = [
 	\     'syntax': 'markdown',
 	\     'ext': '.md' }
 	\ ]
+let wiki = {}
+let wiki.nested_syntaxes = {'python': 'python'}
 
 nmap gl[ <Plug>VimwikiToggleListItem
