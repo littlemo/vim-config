@@ -14,6 +14,3 @@ let g:vimwiki_list = [
 	\ ]
 
 nmap gl[ <Plug>VimwikiToggleListItem
-
-" 关闭拼写检查，避免中文被标红
-set nospell
