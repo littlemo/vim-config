@@ -9,3 +9,5 @@
 
 # 多光标
 - repo: mg979/vim-visual-multi
+
+- repo: tveskag/nvim-blame-line
