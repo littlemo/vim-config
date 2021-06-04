@@ -8,8 +8,8 @@ augroup DisableSpell
   autocmd BufRead,BufNewFile *.md setlocal nospell
 augroup END
 
-" 开启 blame line 插件
-autocmd BufEnter * EnableBlameLine
+" blame line 插件按键映射
+nnoremap <silent> <leader>tb :ToggleBlameLine<CR>
 
 " 仅展开当前块并屏幕上下居中显示
 " nnoremap <S-Return> zMzvzz
