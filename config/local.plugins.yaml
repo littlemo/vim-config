@@ -12,4 +12,5 @@
 
 - repo: tveskag/nvim-blame-line
   hook_add: |-
-    let g:blameLineVirtualTextFormat = '     %s'
+    let g:blameLineVirtualTextFormat = '     %s'
+    let g:blameLineGitFormat = ' %an ⏽  %as ⏽  %s ⏽ %h'
