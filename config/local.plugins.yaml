@@ -8,9 +8,12 @@
 # - repo: gcmt/wildfire.vim
 
 # 多光标
-- repo: mg979/vim-visual-multi
+# - repo: mg979/vim-visual-multi
 
-- repo: tveskag/nvim-blame-line
-  hook_add: |-
-    let g:blameLineVirtualTextFormat = '     %s'
-    let g:blameLineGitFormat = ' %an ⏽  %as ⏽  %s ⏽ %h'
+# - repo: tveskag/nvim-blame-line
+#   hook_add: |-
+#     let g:blameLineVirtualTextFormat = '     %s'
+#     let g:blameLineGitFormat = ' %an ⏽  %as ⏽  %s ⏽ %h'
+
+# 代码补全&分析
+- repo: neoclide/coc.nvim
