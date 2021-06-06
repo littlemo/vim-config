@@ -17,3 +17,4 @@
 
 # 代码补全&分析
 - repo: neoclide/coc.nvim
+  merged: 0
