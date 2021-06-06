@@ -33,7 +33,7 @@ cnoremap <C-k> <c-\>egetcmdline()[:getcmdpos()-2]<CR>
 com! FormatJSON %!python3 -c "import json, sys, collections; print(json.dumps(json.load(sys.stdin, object_pairs_hook=collections.OrderedDict), ensure_ascii=False, indent=4))"
 
 " 响应速度优化
-set lazyredraw
+" set lazyredraw
 
 " 自定义按键映射
 nnoremap <silent> <A-h> :TmuxNavigateLeft<cr>
