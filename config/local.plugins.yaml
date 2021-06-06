@@ -18,3 +18,16 @@
 # 代码补全&分析
 - repo: neoclide/coc.nvim
   merged: 0
+  hook_add: |-
+    let g:coc_global_extensions = [
+      \ 'coc-json',
+      \ 'coc-git',
+      \ 'coc-sh',
+      \ 'coc-yaml',
+      \ 'coc-jedi',
+      \ 'coc-snippets',
+      \ 'coc-diagnostic',
+      \ 'coc-pydocstring',
+      \ ]
+    let g:coc_snippet_next = '<tab>'
+    let g:coc_snippet_prev = '<s-tab>'

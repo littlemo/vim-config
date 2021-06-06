@@ -120,7 +120,7 @@ endif
 
 if dein#tap('vista.vim')
 	nnoremap <silent> <Leader>b :<C-u>Vista<CR>
-	nnoremap <silent> <Leader>a :<C-u>Vista show<CR>
+	" nnoremap <silent> <Leader>a :<C-u>Vista show<CR>
 endif
 
 if dein#tap('emmet-vim')
@@ -423,6 +423,107 @@ if dein#tap('vim-textobj-function')
 	omap <silent> if <Plug>(textobj-function-i)
 	xmap <silent> af <Plug>(textobj-function-a)
 	xmap <silent> if <Plug>(textobj-function-i)
+endif
+
+if dein#tap('coc.nvim')
+
+	inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+	function! s:check_back_space() abort
+		let col = col('.') - 1
+		return !col || getline('.')[col - 1]  =~# '\s'
+	endfunction
+
+	nmap <silent><buffer> gr     <Plug>(coc-references)
+	nmap <silent><buffer> gi     <Plug>(coc-implementation)
+	nmap <silent><buffer> gy     <Plug>(coc-type-definition)
+	nmap <silent><buffer> <C-]>  <Plug>(coc-definition)
+	" nmap <silent><buffer> g<C-]> <Plug>(lsp-peek-definition)
+	" nmap <silent><buffer> gd     <Plug>(lsp-peek-declaration)
+	" nmap <silent><buffer> gY     <Plug>(lsp-type-hierarchy)
+	" nmap <silent><buffer> gA     <Plug>(lsp-code-action)
+	" nmap <silent><buffer> ,s     <Plug>(lsp-signature-help)
+	nmap <silent><buffer> [d     <Plug>(coc-diagnostic-prev)
+	nmap <silent><buffer> ]d     <Plug>(coc-diagnostic-next)
+
+	nmap <buffer> <Leader>rn     <Plug>(coc-rename)
+	xmap <buffer> <Leader>F      <plug>(coc-format-selected)
+	nmap <buffer> <Leader>F      <plug>(coc-format-selected)
+	vmap <buffer> <Leader>F      <plug>(coc-format-selected)
+
+	" Applying codeAction to the selected region.
+	" Example: `<leader>aap` for current paragraph
+	xmap <leader>a  <Plug>(coc-codeaction-selected)
+	nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+	" Remap keys for applying codeAction to the current buffer.
+	nmap <leader>ac  <Plug>(coc-codeaction)
+
+	" Apply AutoFix to problem on the current line.
+	nmap <leader>qf  <Plug>(coc-fix-current)
+
+	function! s:show_documentation()
+		if (index(['vim','help'], &filetype) >= 0)
+			execute 'h '.expand('<cword>')
+		elseif (coc#rpc#ready())
+			call CocActionAsync('doHover')
+		else
+			execute '!' . &keywordprg . " " . expand('<cword>')
+		endif
+	endfunction
+
+	" Use K to show documentation in preview window.
+	nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+	" Map function and class text objects
+	" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
+	xmap if <Plug>(coc-funcobj-i)
+	omap if <Plug>(coc-funcobj-i)
+	xmap af <Plug>(coc-funcobj-a)
+	omap af <Plug>(coc-funcobj-a)
+	xmap ic <Plug>(coc-classobj-i)
+	omap ic <Plug>(coc-classobj-i)
+	xmap ac <Plug>(coc-classobj-a)
+	omap ac <Plug>(coc-classobj-a)
+
+	" Remap <C-f> and <C-b> for scroll float windows/popups.
+	if has('nvim-0.4.0') || has('patch-8.2.0750')
+		nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+		nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+		inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+		inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+		vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+		vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+	endif
+
+	" Highlight the symbol and its references when holding the cursor.
+	autocmd CursorHold * silent call CocActionAsync('highlight')
+
+	" Add (Neo)Vim's native statusline support.
+	" NOTE: Please see `:h coc-status` for integrations with external plugins that
+	" provide custom statusline: lightline.vim, vim-airline.
+	" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+	" Add `:Format` command to format current buffer.
+	command! -nargs=0 Format :call CocAction('format')
+
+	" Add `:Fold` command to fold current buffer.
+	command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+	" Add `:OR` command for organize imports of the current buffer.
+	command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+	augroup mygroup
+		autocmd!
+		" Setup formatexpr specified filetype(s).
+		autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+		" Update signature help on jump placeholder.
+		autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+	augroup end
 endif
 
 " vim: set ts=2 sw=2 tw=80 noet :

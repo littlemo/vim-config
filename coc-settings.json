@@ -1,0 +1,26 @@
+{
+  "suggest.noselect": false,
+  "suggest.snippetIndicator": " 勞",
+  "diagnostic.refreshOnInsertMode": true,
+
+  "git.virtualTextPrefix": "   ",
+  "git.addGBlameToVirtualText": true,
+  "git.blameUseRealTime": true,
+
+  "jedi.diagnostics.enable": false,
+
+  "diagnostic-languageserver.enable": true,
+  "diagnostic-languageserver.mergeConfig": true,
+  "diagnostic-languageserver.filetypes": {
+    "python": ["flake8"]
+  },
+  "diagnostic-languageserver.formatFiletypes": {
+    "python": ["black", "isort", "docformatter"]
+  },
+  "diagnostic-languageserver.formatters": {
+    "docformatter": {
+      "command": "docformatter",
+      "args": ["-"]
+    }
+  }
+}
