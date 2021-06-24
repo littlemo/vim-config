@@ -42,4 +42,10 @@ nnoremap <silent> <A-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <A-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <A-\> :TmuxNavigatePrevious<cr>
 
+" 文档保存
+nnoremap <A-s> :<C-u>write<CR>
+xnoremap <A-s> :<C-u>write<CR>
+cnoremap <A-s> <C-u>write<CR>
+
+
 " vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :
